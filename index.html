@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Horta Urbana - Gestão de Canteiros</title>
+  </head>
+  <body>
+    <header>
+      <h1>Horta Urbana - Gestão de Canteiros</h1>
+
+      <p>
+        Bem-vindo ao sistema de gestão de canteiros da Horta Urbana! Aqui você
+        pode criar, editar e excluir canteiros, além de visualizar os detalhes
+        de cada um.
+      </p>
+      <nav>
+        <ul>
+          <li>
+            <button onclick="irPara('painel')" class="painel">
+              Painel de Controle
+            </button>
+          </li>
+          <li>
+            <button onclick="irPara('plantio')" class="plantio">
+              Novo Plantio
+            </button>
+          </li>
+          <li>
+            <button onclick="irPara('mapa')" class="mapa">
+              Mapa de Hortas
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="app" style="display: none;">
+      <section id="painel">
+        <h2>📋 Painel de Controle</h2>
+
+        <div id="lista-canteiros">
+          <article class="card-minimalista alerta">
+            <div class="card-header">
+              <h3>Alface Crespa</h3>
+              <span class="tag-status">Rega Necessária</span>
+            </div>
+
+            <div class="card-body">
+              <p><strong>📍 Local:</strong> Lote Central</p>
+              <p><strong>🏠 Endereço:</strong> Rua Domingos Gaudio, 80</p>
+              <p><strong>🏙️ Cidade:</strong> Osvaldo Cruz - SP</p>
+              <p><strong>📅 Colheita:</strong> 01/06/2026</p>
+            </div>
+
+            <button class="btn-check">Marcar como Regado</button>
+          </article>
+
+          <article class="card-minimalista">
+            <div class="card-header">
+              <h3>Tomate Cereja</h3>
+              <span class="tag-status ok">Status: OK</span>
+            </div>
+
+            <div class="card-body">
+              <p><strong>📍 Local:</strong> Horta Comunitária Sul</p>
+              <p><strong>🏠 Endereço:</strong> Tv. Ametista, 85</p>
+              <p><strong>🏙️ Cidade:</strong> Osvaldo Cruz - SP</p>
+              <p><strong>📅 Colheita:</strong> 10/05/2026</p>
+            </div>
+
+            <button class="btn-check">Ver Detalhes</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="plantio" style="display: none">
+        <h2>Registrar Novo Plantio</h2>
+        <form id="form-plantio">
+          <label for="cultura">Tipo de Cultura:</label>
+          <select id="cultura" required>
+            <option value="alface">Alface (45 dias)</option>
+            <option value="tomate">Tomate (90 dias)</option>
+            <option value="cenoura">Cenoura (60 dias)</option>
+            <option value="batata">Batata (100 dias)</option>
+          </select>
+
+          <label for="data">Data do Plantio:</label>
+          <input type="date" id="data" required />
+
+          <button type="submit">Cadastrar Canteiro</button>
+        </form>
+      </section>
+
+      <section id="mapa" style="display: none">
+        <h2>Hortas Próximas</h2>
+        <div id="map-container">
+          <p>Carregando mapa e sua localização...</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Horta Urbana. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
