@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Painel de Controle - Horta Urbana</title>
+</head>
+<body>
+    <header>
+      <h1>Horta Urbana - Gestão de Canteiros</h1>
+
+
+      <nav>
+        <ul>
+           <li>
+            <button onclick="irPara('painel')">Painel de Controle</button>
+          </li>
+          <li>
+            <button onclick="irPara('plantio')">Novo Plantio</button>
+          </li>
+          <li>
+            <button onclick="irPara('mapa')">Mapa de Hortas</button>
+          </li>
+        </ul>
+      </nav>
+      </header>
+    
+    <main id="app">
+      <section id="painel">
+        <h2>📋 Painel de Controle</h2>
+
+        <div id="lista-canteiros" >
+          <!-- Todos os Novos Plantios vem aqui-->
+        </div>
+      </section>
+
+      <footer>
+      <p>&copy; 2026 Horta Urbana. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="../script.js"></script>
+
+</body>
+</html>

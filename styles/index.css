@@ -1,0 +1,84 @@
+/* 1. RESET E CORES DE ALTO CONTRASTE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #004d00;
+  --cor-primaria: #10a010;
+  --cor-alerta: #d32f2f;
+  --cor-sucesso: #2e7d32;
+  --cor-borda: #333333;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* 2. NAVEGAÇÃO (BOTÕES GRANDES) */
+header {
+  border-bottom: 3px solid var(--cor-texto);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 250px;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+nav button {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+nav button:hover {
+  background-color: var(--cor-primaria);
+}
+

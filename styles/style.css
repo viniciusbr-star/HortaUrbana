@@ -1,0 +1,248 @@
+/* 1. RESET E CORES DE ALTO CONTRASTE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #004d00;
+  --cor-primaria: #10a010;
+  --cor-alerta: #d32f2f;
+  --cor-sucesso: #2e7d32;
+  --cor-borda: #333333;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* 2. NAVEGAÇÃO (BOTÕES GRANDES) */
+header {
+  border-bottom: 3px solid var(--cor-texto);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 250px;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+nav button {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+nav button:hover {
+  background-color: var(--cor-primaria);
+}
+
+/* Container dos cards: coloca um ao lado do outro e quebra linha se necessário */
+#lista-canteiros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo do Card Minimalista */
+.card-minimalista {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.card-minimalista:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Cabeçalho do Card */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Tags de Status */
+.tag-status {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #ffebee;
+  color: #c62828;
+}
+
+.tag-status.ok {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Corpo do Card */
+.card-body p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.card-body strong {
+  color: #333;
+}
+
+/* Botão Minimalista */
+.btn-check {
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn-check:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Alerta visual de urgência (mantendo o requisito do projeto) */
+.card-minimalista.alerta {
+  border-left: 8px solid #d32f2f;
+}
+
+/* 4. ALERTAS VISUAIS (UX DE URGÊNCIA) */
+.alerta {
+  border-color: var(--cor-alerta);
+  background-color: #fff0f0;
+  position: relative;
+  animation: pulsar-borda 1.5s infinite;
+}
+
+@keyframes pulsar-borda {
+  0% {
+    outline: 5px solid rgba(211, 47, 47, 0);
+  }
+  50% {
+    outline: 5px solid rgba(211, 47, 47, 0.7);
+  }
+  100% {
+    outline: 5px solid rgba(211, 47, 47, 0);
+  }
+}
+
+.alerta::before {
+  content: "⚠️ COLHEITA NECESSÁRIA";
+  display: block;
+  background: var(--cor-alerta);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.tituloin {
+  display: flex;
+  justify-content: center;
+}
+
+/* 5. FORMULÁRIOS ACESSÍVEIS */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.0rem;
+}
+
+input,
+select {
+  padding: 6px;
+  font-size: 1.2rem;
+  border: 2px solid var(--cor-texto);
+}
+
+button[type="submit"] {
+  background-color: var(--cor-sucesso);
+  color: white;
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  margin-top: 10px;
+}
+*/
+
+/* 6. RESPONSIVIDADE PARA MAPAS */
+#map-container {
+  width: 100%;
+  height: 300px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--cor-texto);
+}
+

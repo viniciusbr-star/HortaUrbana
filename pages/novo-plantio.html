@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>Novo Plantio - Horta Urbana</title>
+  </head>
+  <body>
+    <header>
+      <h1>Horta Urbana - Gestão de Canteiros</h1>
+      <nav>
+        <ul>
+          <li>
+            <button onclick="irPara('painel')">Painel de Controle</button>
+          </li>
+          <li>
+            <button onclick="irPara('plantio')">Novo Plantio</button>
+          </li>
+          <li>
+            <button onclick="irPara('mapa')">Mapa de Hortas</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="cadastro">
+      <h2>Cadastrar Novo Canteiro</h2>
+      <form id="form-plantio">
+        <label for="cultura">Cultura (Planta):</label>
+        <select id="cultura" required>
+          <option value="Alface">Alface (45 dias)</option>
+          <option value="Tomate">Tomate (90 dias)</option>
+          <option value="Cenoura">Cenoura (70 dias)</option>
+        </select>
+
+        <label for="data">Data do Plantio:</label>
+        <input type="date" id="data" required />
+
+        <label for="area">Área do Canteiro (m²):</label>
+        <input type="number" id="area" placeholder="Ex: 10" required />
+
+        <label for="endereco">Endereço/Localização:</label>
+        <input
+          type="text"
+          id="endereco"
+          placeholder="Ex: Lote Central"
+          required
+        />
+
+        <button type="submit" id="btn-enviar">Cadastrar Canteiro</button>
+      </form>
+    </section>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

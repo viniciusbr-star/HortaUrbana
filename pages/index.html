@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <title>Horta Urbana - Gestão de Canteiros</title>
+  </head>
+  <body>
+    <header>
+      <img src="/images/hortaurbana.png" alt="" />
+      <h1>Horta Urbana - Gestão de Canteiros</h1>
+
+      <p>
+        Bem-vindo ao sistema de gestão de canteiros da Horta Urbana! Aqui você
+        pode criar, editar e excluir canteiros, além de visualizar os detalhes
+        de cada um.
+      </p>
+    </header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <button onclick="irPara('painel')">Painel de Controle</button>
+          </li>
+          <li>
+            <button onclick="irPara('plantio')">Novo Plantio</button>
+          </li>
+          <li>
+            <button onclick="irPara('mapa')">Mapa de Hortas</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Horta Urbana. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
