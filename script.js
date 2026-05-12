@@ -15,11 +15,11 @@ function cadastrarPlantio(event) {
   const areaM2 = parseFloat(document.getElementById("area").value);
   const endereco = document.getElementById("endereco").value;
 
-  // Lógica de Ciclo de Vida com Objeto Date (Sprint 2)
+  // Lógica de Ciclo de Vida
   let dataColheita = new Date(dataPlantioStr);
   dataColheita.setDate(dataColheita.getDate() + infoCulturas[cultura].ciclo);
 
-  // Cálculos Agronômicos com Objeto Math (Sprint 2)
+  // Cálculos com Math
   const totalSementes = Math.ceil(areaM2 * infoCulturas[cultura].sementesM2);
 
   const novoCanteiro = {
@@ -40,23 +40,21 @@ function cadastrarPlantio(event) {
   window.location.href = "painel-de-controle.html";
 }
 
-// 3. Renderização Dinâmica do DOM (Sprint 2)
+// 3. Renderização Dinâmica
 function carregarPainel() {
   const listaCanteiros = document.getElementById("lista-canteiros");
-  if (!listaCanteiros) return; // Só roda se estiver na página do painel
+  if (!listaCanteiros) return;
 
   const dados = JSON.parse(localStorage.getItem("hortas")) || [];
 
-  // Limpa os cards estáticos se houver dados salvos
-  if (dados.length > 0) listaCanteiros.innerHTML = "";
+  // Limpa os cards se houver dados salvos
+  if (dados.length >= 0) listaCanteiros.innerHTML = "";
 
   dados.forEach((item) => {
     const hoje = new Date().getTime();
     const estaPronto = hoje >= item.timestampColheita;
 
-    // Criação cirúrgica de elemento HTML
     const card = document.createElement("article");
-    // Alerta Visual de Urgência (Sprint 2)
     card.className = `card-minimalista ${estaPronto ? "alerta" : ""}`;
 
     card.innerHTML = `
@@ -91,7 +89,7 @@ window.onload = () => {
   carregarPainel();
 };
 
-// Navegação Simples para as páginas (pode ser expandida para rotas mais complexas no futuro)
+// Navegação Simples para as páginas 
 function irPara(pagina) {
   switch (pagina) {
     case "painel":
@@ -102,6 +100,10 @@ function irPara(pagina) {
       break;
     case "mapa":
       window.location.href = "/pages/mapa-plantio.html";
+      break;
+    case "sair":
+      localStorage.clear(); 
+      window.location.href = "/login.html";
       break;
     default:
       console.error("Página desconhecida:", pagina);
